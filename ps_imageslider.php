@@ -618,7 +618,9 @@ class Ps_ImageSlider extends Module implements WidgetInterface
 
     public function headerHTML()
     {
-        if (Tools::getValue('controller') != 'AdminModules' && Tools::getValue('configure') != $this->name) {
+        if ('AdminModules' !== Tools::getValue('controller') ||
+            Tools::getValue('configure') !== $this->name ||
+            Tools::getIsset('id_slide')) {
             return;
         }
 
