@@ -119,9 +119,6 @@ class Ps_ImageSlider extends Module implements WidgetInterface
                 $this->installSamples();
             }
 
-            // Disable on mobiles and tablets
-            $this->disableDevice(Context::DEVICE_MOBILE);
-
             return (bool) $res;
         }
 
