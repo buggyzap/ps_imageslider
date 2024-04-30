@@ -496,6 +496,8 @@ class Ps_ImageSlider extends Module implements WidgetInterface
                     $slide->image[$language['id_lang']] = $salt . '_' . $_FILES['image_' . $language['id_lang']]['name'];
                 } elseif (Tools::getValue('image_old_' . $language['id_lang']) != '') {
                     $slide->image[$language['id_lang']] = Tools::getValue('image_old_' . $language['id_lang']);
+                } else {
+                    $errors[] = $this->displayError($this->trans('Uploaded file is not supported, only jpg, gif, jpeg, png are allowed.', [], 'Admin.Notifications.Error'));
                 }
             }
 
